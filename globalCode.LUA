@@ -56,6 +56,7 @@ chitsFog = false
 autoVP = true
 gameStart = false
 beginner = false
+customBoard = false
 
 
 function onload()
@@ -486,7 +487,7 @@ end
 
 function randomizeHarbors()
     local button_parameters = {}
-    button_parameters.index = 2
+    button_parameters.index = 3
     if randomHarbors then
         button_parameters.label = 'Standard'
         menuBoard.editButton( button_parameters )
@@ -501,7 +502,7 @@ end
 
 function randomizeChits()
     local button_parameters = {}
-    button_parameters.index = 3
+    button_parameters.index = 4
     if chitsFog then
         button_parameters.label = 'Standard'
         menuBoard.editButton( button_parameters )
@@ -523,7 +524,7 @@ end
 
 function changeAutoVP()
     local button_parameters = {}
-    button_parameters.index = 4
+    button_parameters.index = 5
     if autoVP == true then
         button_parameters.label = 'Disabled'
         menuBoard.editButton( button_parameters )
@@ -532,6 +533,21 @@ function changeAutoVP()
         button_parameters.label = 'Enabled'
         menuBoard.editButton( button_parameters )
         autoVP = true
+    end
+end
+
+
+function enableCustom()
+    local button_parameters = {}
+    button_parameters.index = 2
+    if customBoard then
+        button_parameters.label = 'Disable'
+        menuBoard.editButton( button_parameters )
+        customBoard = false
+    else
+        button_parameters.label = 'Enabled'
+        menuBoard.editButton( button_parameters )
+        customBoard = true
     end
 end
 
