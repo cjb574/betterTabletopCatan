@@ -20,6 +20,16 @@ function onload()
         font_size = 350
     } )
 
+	self.createButton( {
+        click_function = 'enableCustom',
+        function_owner = Global,
+        label = 'Disabled',
+        position = {-4.20, 0.6, 3.5},
+        width = 2250,
+        height = 600,
+        font_size = 350
+    } )
+
     self.createButton( {
         click_function = 'randomizeHarbors',
         function_owner = Global,
