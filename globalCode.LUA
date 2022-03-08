@@ -573,10 +573,16 @@ end
 
 function lockBoard()
 		for i, tile in ipairs( tileList ) do
+			if customBoard then
+				if i > 6 then
+				goto continue
+				end
+			end
         currentTile = tile[1]
         currentTile.setPosition( tile[2] )
         currentTile.setRotation( tile[3] )
         currentTile.lock()
+		::continue::
 		end
 end
 
@@ -625,7 +631,7 @@ end
 
 
 function update()
-    lockBoard()
+	lockBoard()
     autoVPcards()
 		dieSum = dieOne.getValue() + dieTwo.getValue()
 		if oldDieSum != dieSum then
